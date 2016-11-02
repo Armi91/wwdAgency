@@ -1,0 +1,116 @@
+// Media queries
+
+@mixin mobile{
+	@media only screen and (max-width: 486px){
+		@content;
+	}
+}
+
+@mixin tablet{
+	@media only screen and (max-width: 768px){
+		@content;
+	}
+}
+
+@mixin desktop-small{
+	@media only screen and (max-width: 1024px){
+		@content;
+	}
+}
+
+@mixin desktop{
+	@media only screen and (min-width: 1200px){
+		@content;
+	}
+}
+
+$total_width: 100%;
+$gutter-width: 20px;
+
+
+// Colors
+
+$accent: #f16522;
+$dark: #363636;
+$bg_dark: #28282e;
+$bg_darker: #222227;
+$bg_light: #f1f1f1;
+$bg_footer: #e7eaed;
+$alternative-text-color: #878796;
+
+// Fonts
+
+$dosis: 'Dosis', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+@mixin centerY{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin centerX{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin header($size){
+	font-size: $size;
+	margin: 0;
+}
+
+@mixin headers-group(){
+	h2{
+		@include header(3rem);
+	}
+	h3{
+		@include header(2rem);
+	}
+}
+
+@mixin transition($t:0.2s){
+	transition: all $t ease-in-out;
+}
+
+// Classes
+
+section{
+	@include clearfix();
+}
+
+.container{
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	@include clearfix();
+}
+
+.short-underline{
+	display: block;
+	width: 40px;
+	height: 5px;
+	background-color: $accent;
+	margin: 1rem 0;
+}
+
+.button-link{
+	font-size: 0.8rem;
+	background-color: $dark;
+	line-height: 3.5rem;
+	padding: 1.1rem 1.8rem;
+	color: #FFF;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	@include transition();
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+.link{
+	text-decoration: none;
+	color: $accent;
+}
+
