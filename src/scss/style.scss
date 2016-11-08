@@ -28,8 +28,10 @@ img{
 header{
 	background-image: url('../img/bg-header.jpg');
 	background-size: cover;
+	position: relative;
 	@include clearfix();
 	@include desktop-small{
+		position: static;
 		background: none;
 	}
 }
@@ -76,21 +78,13 @@ nav{
 		}
 	}
 	&.active-menu{
-		// display: block;
 		transform: translateY(0);
-		// top: 0;
 		@include desktop{
 			transform: none;
 		}
 
 	}
 }
-
-// @include desktop-small{
-// 	.body-margin{
-// 		margin-top: 308px;
-// 	}
-// }
 
 .hamburger{
 	position: absolute;
@@ -155,7 +149,6 @@ nav{
 
 .slider-item{
 	display: none;
-	// top: -10000px;
 }
 
 .slider-active{
@@ -180,6 +173,30 @@ nav{
 .animation-start{
 	animation-duration: 0.4s;
 	animation-fill-mode: both;
+}
+
+.arrow-down{
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	width: 34px;
+	height: 34px;
+	background-color: #FFF;
+	transform: translateX(-50%) rotate(-45deg);
+	text-align: center;
+	border-top: 2px solid #64b7ff;
+	border-left: 2px solid #64b7ff;
+	border-bottom: 2px solid #47454a;
+	border-right: 2px solid #47454a;
+	img{
+		transform: rotate(-45deg);
+		margin-top: 8px;
+		margin-right: 4px;
+
+	}
+	@include desktop-small{
+		display: none;
+	}
 }
 
 @include desktop-small{
@@ -226,7 +243,7 @@ nav{
 		right: auto;
 		bottom: 2rem;
 		left: 50%;
-		transform: translateX(-100%);
+		transform: translateX(-50%);
 		li{
 			display: inline-block;
 		}
@@ -624,6 +641,9 @@ nav{
 		cursor: pointer;
 		@include centerX;
 		margin-top: 2rem;
+		&:hover{
+			text-decoration: underline;
+		}
 	}
 	@include desktop-small{
 		.col{

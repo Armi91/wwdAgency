@@ -112,5 +112,8 @@ section{
 .link{
 	text-decoration: none;
 	color: $accent;
+	&:hover{
+		text-decoration: underline;
+	}
 }
 

@@ -43,8 +43,9 @@ $paginationItem.each(function(index, el) {
 
 // ScrollTo
 
-var $menu = $('#main-menu > li > a');
+var $menu = $('#main-menu > li > a, .arrow-down');
 
+console.log($menu);
 $menu.click(function(event) {
 	event.preventDefault();
 	var $link = $(this).attr('href');
